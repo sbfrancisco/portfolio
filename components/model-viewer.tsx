@@ -1,3 +1,5 @@
+"use client"
+
 import {
   FC,
   Suspense,
@@ -468,31 +470,6 @@ const ModelViewer: FC<ViewerProps> = ({
     maxZoomDistance
   );
 
-  const capture = () => {
-    const g = rendererRef.current,
-      s = sceneRef.current,
-      c = cameraRef.current;
-    if (!g || !s || !c) return;
-    g.shadowMap.enabled = false;
-    const tmp: { l: THREE.Light; cast: boolean }[] = [];
-    s.traverse((o: any) => {
-      if (o.isLight && "castShadow" in o) {
-        tmp.push({ l: o, cast: o.castShadow });
-        o.castShadow = false;
-      }
-    });
-    if (contactRef.current) contactRef.current.visible = false;
-    g.render(s, c);
-    const urlPNG = g.domElement.toDataURL("image/png");
-    const a = document.createElement("a");
-    a.download = "model.png";
-    a.href = urlPNG;
-    a.click();
-    g.shadowMap.enabled = true;
-    tmp.forEach(({ l, cast }) => (l.castShadow = cast));
-    if (contactRef.current) contactRef.current.visible = true;
-    invalidate();
-  };
 
   return (
     <div
@@ -503,14 +480,7 @@ const ModelViewer: FC<ViewerProps> = ({
       }}
       className="relative"
     >
-      {showScreenshotButton && (
-        <button
-          onClick={capture}
-          className="absolute top-4 right-4 z-10 cursor-pointer px-4 py-2 border border-white rounded-xl bg-transparent text-white hover:bg-white hover:text-black transition-colors"
-        >
-          Take Screenshot
-        </button>
-      )}
+
 
       <Canvas
         shadows

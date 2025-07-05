@@ -1,8 +1,10 @@
+"use client"
 import { Card, CardContent } from "@/components/ui/card"
 import { Code, Sparkles, Zap } from "lucide-react"
 import ModelViewer from '@/components/model-viewer';
 
 export function About() {
+  
   return (
     <section id="sobre-mi" className="py-20 bg-muted/50">
       <div className="container mx-auto px-4">
@@ -11,11 +13,17 @@ export function About() {
 
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <img
-                src="/placeholder.svg?height=400&width=400"
-                alt="Trabajando"
-                className="rounded-lg shadow-lg w-full"
-              />
+              <div>
+              <ModelViewer
+  url="/model/base_basic_pbr.glb"
+  width={300}
+  defaultZoom={2}
+  height={300}
+  enableHoverRotation={false}
+  enableMouseParallax={false}
+/>
+
+      </div>
             </div>
 
             <div className="space-y-6">
