@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Code, Sparkles, Zap } from "lucide-react"
-
+import ModelViewer from '@/components/model-viewer';
 
 export function About() {
   return (
