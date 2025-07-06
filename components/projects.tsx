@@ -6,12 +6,12 @@ import { Github, ExternalLink } from "lucide-react"
 export function Projects() {
   const projects = [
     {
-      title: "E-commerce Platform",
+      title: "paystack",
       description:
-        "Plataforma de comercio electrónico completa con carrito de compras, pagos y panel de administración.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      github: "#",
+        "Billetera virtual que incluye transferencias, ahorros , administración de roles, generación de comprobantes y registro de actividades para mayor control.",
+      image: "/paystack.png?height=500&width=500",
+      technologies: ["Ruby", "ActiveRecord", "Sinatra", "HTML", "CSS", "SQLite"],
+      github: "https://github.com/sbfrancisco/virtual-wallet",
       demo: "#",
     },
     {
@@ -92,12 +92,6 @@ export function Projects() {
                       <a href={project.github} target="_blank" rel="noopener noreferrer">
                         <Github className="h-4 w-4 mr-2" />
                         Código
-                      </a>
-                    </Button>
-                    <Button size="sm" asChild>
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        Demo
                       </a>
                     </Button>
                   </div>
