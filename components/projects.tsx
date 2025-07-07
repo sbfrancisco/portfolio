@@ -17,7 +17,7 @@ export function Projects() {
     {
       title: "Generador de casos de uso",
       description: "Aplicación que facilita la creación de casos de uso para proyectos de software.",
-      image: "/use-maker.png?height=300&width=400",
+      image: "/use_maker.png?height=300&width=400",
       technologies: ["Phyton", "Flask"],
       github: "#",
       demo: "#",
