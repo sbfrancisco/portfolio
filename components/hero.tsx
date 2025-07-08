@@ -28,10 +28,12 @@ export function Hero() {
               <Mail className="mr-2 h-5 w-5" />
               Contáctame
             </Button>
+            <a href="/curriculum_vitae.pdf" target="_blank" rel="noopener noreferrer">
             <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent">
               <Download className="mr-2 h-5 w-5" />
               Descargar CV
             </Button>
+            </a>
           </div>
         </div>
       </div>
