@@ -19,7 +19,7 @@ export function Projects() {
       description: "Aplicación que facilita la creación de casos de uso para proyectos de software",
       image: "/use_maker.png",
       technologies: ["Phyton", "Flask"],
-      github: "#",
+      github: "https://github.com/sbfrancisco/use_cases_maker",
       demo: "#",
     },
     {
