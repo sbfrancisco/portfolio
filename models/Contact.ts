@@ -1,13 +1,19 @@
-import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, BaseEntity } from 'typeorm';
 
 @Entity()
 export class Contact extends BaseEntity {
   @PrimaryGeneratedColumn()
-  id!: number
+  id!: number;
 
   @Column()
-  name!: string
+  name!: string;
 
   @Column()
-  email!: string
+  email!: string;
+
+  @Column()
+  message!: string;
+
+  @CreateDateColumn()
+  date!: Date; 
 }
