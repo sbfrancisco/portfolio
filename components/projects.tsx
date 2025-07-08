@@ -6,28 +6,28 @@ import { Github, ExternalLink } from "lucide-react"
 export function Projects() {
   const projects = [
     {
-      title: "paystack",
+      title: "PayStack",
       description:
-        "Billetera virtual que incluye transferencias, ahorros , administración de roles, generación de comprobantes y registro de actividades para mayor control.",
-      image: "/paystack.png?height=500&width=500",
+        "Billetera virtual que incluye sistema de transferencias, ahorros, administración de roles, generación de comprobantes y registro de actividades",
+      image: "/paystack.png",
       technologies: ["Ruby", "ActiveRecord", "Sinatra", "HTML", "CSS", "SQLite"],
       github: "https://github.com/sbfrancisco/virtual-wallet",
       demo: "#",
     },
     {
       title: "Generador de casos de uso",
-      description: "Aplicación que facilita la creación de casos de uso para proyectos de software.",
-      image: "/use-maker.png?height=300&width=400",
+      description: "Aplicación que facilita la creación de casos de uso para proyectos de software",
+      image: "/use_maker.png",
       technologies: ["Phyton", "Flask"],
       github: "#",
       demo: "#",
     },
     {
-      title: "Portfolio Website",
-      description: "Sitio web de portafolio personal con blog integrado y sistema de contacto.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["Next.js", "MDX", "Tailwind CSS", "Vercel"],
-      github: "#",
+      title: "Portfolio",
+      description: "Sitio web de portafolio personal con blog integrado y sistema de contacto",
+      image: "/portfolio.png",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+      github: "https://github.com/sbfrancisco/portfolio",
       demo: "#",
     },
   ]
@@ -41,11 +41,11 @@ export function Projects() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="aspect-video overflow-hidden">
+                <div className="aspect-video bg-gray-100 flex items-center justify-center overflow-hidden">
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300"
                   />
                 </div>
 
