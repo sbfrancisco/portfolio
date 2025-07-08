@@ -1,4 +1,4 @@
-import { DataSource } from "typeorm";
+import { getDataSource } from "@/lib/db";
 import { Contact } from "@/models/Contact";
 
 export default async function handler(req, res) {
@@ -13,19 +13,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const AppDataSource = new DataSource({
-      type: "postgres",
-      host: process.env.DB_HOST,
-      port: Number(process.env.DB_PORT),
-      username: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
-      entities: [Contact],
-      synchronize: true,
-    });
-
-    await AppDataSource.initialize();
-
+    const AppDataSource = await getDataSource();
     const contactRepo = AppDataSource.getRepository(Contact);
     const newContact = contactRepo.create({ name, email, message });
 
